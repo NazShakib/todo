@@ -1,21 +1,13 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom'
 import {XYPlot, XAxis, YAxis, HorizontalGridLines, LineSeries} from 'react-vis';
 import './App.css';
 
-// import components from 
-import Form from './components/Form';
-import TodoList from './components/TodoList';
-import camera from './camera.js';
-import Docs from './docs/';
-
-// image capture module
 import Camera from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 
 function App() {
-  const [inputText,setInputText]= useState("");
-  const [todo, setTodo] = useState([]);
+
 
   const Image = ({ data }) => <img class="center" src={`data:image/jpeg;base64,${data}`} />
 
@@ -119,15 +111,7 @@ function App() {
       <button type='submit' id="button-submit">Save image</button>
     </form>
 
- 
- 
-  {/* <Form 
-      
-      todo={todo} 
-      setTodo={setTodo} 
-      setInputText={setInputText} 
-      inputText={inputText} />
-      <TodoList todo={todo} setTodo={setTodo}/> */}
+
     </div>
   );
 }

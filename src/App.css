@@ -164,13 +164,11 @@
   }
   .parent-shades
   {
-    /* background:red;  */
     opacity: .5; 
     position: absolute;
     top:150px; 
     left:120px;
     right: 120px;
-    /* width:100%;  */
     height: 100%;
     z-index: 1;
     
