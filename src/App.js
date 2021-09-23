@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom'
-import {XYPlot, XAxis, YAxis, HorizontalGridLines, LineSeries} from 'react-vis';
 import './App.css';
 
 import Camera from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
+import {Rectangle} from './components/Shape.js';
+import {ImageShape} from './components/ImageShape.js';
+
+
 
 function App() {
-
 
   const Image = ({ data }) => <img class="center" src={`data:image/jpeg;base64,${data}`} />
 
@@ -19,20 +21,6 @@ function App() {
 
     function handleCameraStart (stream) {
       console.log('handleCameraStart');
-      <XYPlot
-      width={stream.width}
-      height={stream.height}>
-      <HorizontalGridLines />
-      
-      <LineSeries
-        data={[
-          {x: 1, y: 10},
-          {x: 1, y: 5},
-          {x: 1, y: 15}
-        ]}/>
-      <XAxis />
-      <YAxis />
-    </XYPlot>
     }
   
     function handleCameraStop () {
@@ -105,13 +93,13 @@ function App() {
     </div>
     <form >
       <div id="img-container">
-
       </div>
       <br/>
       <button type='submit' id="button-submit">Save image</button>
     </form>
-
-
+      <div>
+        <ImageShape/>
+      </div>
     </div>
   );
 }
