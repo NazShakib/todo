@@ -10,7 +10,7 @@ let baseStyle = {
 function drawLine(from, to, lineWeight, componentStyle) {
     const m = (to[1] - from[1]) / (to[0] - from[0]);
     let line = [];
-
+    // return line;
     if (from[0] < to[0]) {
         for (let x = from[0]; x <= to[0]; x += 0.1) {
             let y = m * (x - to[0]) + to[1];
@@ -85,6 +85,8 @@ class Rectangle extends Component {
             componentStyle.position = this.props.position;
         }
 
+        
+
         let rectangle = [];
 
         let corner;
@@ -111,7 +113,7 @@ class Rectangle extends Component {
         if (this.props.zIndex) {
             componentStyle.zIndex = this.props.zIndex;
         }
-
+     
         let corners = [
             [corner[0], corner[1]],
             [corner_bottom[0], corner[1]],
@@ -119,8 +121,11 @@ class Rectangle extends Component {
             [corner[0], corner_bottom[1]],
             [corner[0], corner[1]]
         ];
-
+        console.log("Shape class "+(corner))
+        console.log("Shape class "+(corner_bottom))
         // (x1,y1),(x2,y1),(x2,y2),(x1,y2)
+
+        
 
         let from = corners.slice(0, -1);
         let to = corners.slice(1);
