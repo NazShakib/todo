@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import ResizableRect from 'react-resizable-rotatable-draggable'
+import CloseIcon from '@material-ui/icons/Close';
+import IconButton from '@material-ui/core/IconButton';
 
 class DraggableShape extends Component {
 
@@ -45,23 +47,44 @@ class DraggableShape extends Component {
     })
   }
 
+  
+
   render() {
     const {width, top, left, height, rotateAngle} = this.state
     console.log(width, top, left, height);
 
+    const closeIconStyle = {
+      position: 'absolute',
+      top:(this.state.top-30) + 'px',
+      left:(this.state.left-30) + 'px',
+      margin:'5px'
+    }
+
+    const removeItemByClicking= event => {
+      console.log(this.props)
+      this.setState({
+        left: 0,
+        top: 0,
+        height:0,
+        width: 0
+      })
+      delete this.props;
+    }
+
     return (
-    <>
-        <ResizableRect
+    <div>
+
+        <ResizableRect 
               left={left}
               top={top}
               width={width}
               height={height}
-              rotateAngle={rotateAngle}
+              //rotateAngle={rotateAngle}
               // aspectRatio={false}
               // minWidth={10}
               // minHeight={10}
               zoomable='n, w, s, e, nw, ne, se, sw'
-              // rotatable={true}
+              rotatable={false}
               // onRotateStart={this.handleRotateStart}
               onRotate={this.handleRotate}
               // onRotateEnd={this.handleRotateEnd}
@@ -72,9 +95,11 @@ class DraggableShape extends Component {
               onDrag={this.handleDrag}
               // onDragEnd={this.handleDragEnd}
             /> 
-        </>
+        <IconButton  aria-label="Close" onClick={removeItemByClicking} style={closeIconStyle}>
+          <CloseIcon />
+        </IconButton>  
+        </div>
     );
-
 
   }
  
