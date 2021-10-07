@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom'
 import './App.css';
 
-import Camera from 'react-html5-camera-photo';
+import Camera, { FACING_MODES } from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import {ImageShape} from './components/ImageShape.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -128,11 +128,13 @@ function App() {
         onTakePhoto = { (dataUri) => { handleTakePhoto(dataUri); } }
         //onTakePhotoAnimationDone = { (dataUri) => { handleTakePhotoAnimationDone(dataUri); } }
         imageCompression = {0.97}
+        idealFacingMode = {FACING_MODES.ENVIRONMENT}
         isMaxResolution = {true}
         isImageMirror = {false}
         isFullscreen= {true}
         onCameraStart = { (stream) => { handleCameraStart(stream); } }
         onCameraStop = { () => { handleCameraStop(); } }
+        front = {false}
       /> 
       </div>
     </div>
