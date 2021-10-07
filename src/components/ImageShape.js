@@ -96,14 +96,14 @@ class ImageShape extends Component {
 
       return (
       <div style={parentStyle}>
-        {/* <img src={test3}/> */}
-        {/* <div>
+        <img src={test3}/> 
+         <div>
           <button style={AddButtonPosition} onClick={addDefaultRectangle}>Add</button>
-        </div> */}
+        </div>
   
-      {/* {
+      {
         this.state.data.map(value=><Coordinate key={value.id} {...value}/>)
-      } */}
+      }
       </div>
         )
     }

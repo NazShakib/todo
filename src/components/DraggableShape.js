@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ResizableRect from 'react-resizable-rotatable-draggable'
+import ResizableRect from 'react-resizable-rotatable-draggable-touch'
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 
