@@ -202,3 +202,48 @@
 {
   position:relative;
 } */
+
+
+
+
+
+
+
+/* additional css */
+img.container_image {
+  width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+    img.container_image {
+      width: 60%;
+      position: relative;
+      left:255px
+  }
+}
+
+@media screen and (width: 1280px), (height: 665px) {
+  img.container_image {
+    width: 70%;
+    position: relative;
+    left:170px
+}
+
+@media screen and (min-width: 2000px) {
+  .shades
+  {
+    background-color: white;
+    margin-top: 20px;
+    width: 69%;
+    height: 2px;
+  }
+}
+
+@media screen and (min-width: 1000) {
+  .capture_image
+  {
+    height: 400px;
+  }
+}
+
+}

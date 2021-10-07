@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // const shadesDisplay = props=>(ulits.range)
 
+
 // Hook
 function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
@@ -40,6 +41,13 @@ function useWindowSize() {
   return windowSize;
 }
 
+window.onload = function(){
+  document.getElementById("container-circles").onclick=function(){
+    document.getElementById("img-container").scrollIntoView(true)
+  }
+}
+
+
 function App() {
 
   const { height, width } = useWindowSize();
@@ -47,7 +55,11 @@ function App() {
  // this.height = height*.50;
   //width = 
 
-  const Image = ({ data }) => <img className="center" src={`data:image/jpeg;base64,${data}`} />
+  let dynamic_size={
+    width:width+'px',
+    height:height+'px'
+  }
+  const Image = ({ data }) => <img className="capture_image container" style={dynamic_size} src={`data:image/jpeg;base64,${data}`} />
 
   console.log("size",height,width)
     function handleTakePhoto (dataUri) {
@@ -66,9 +78,9 @@ function App() {
 
   return (
     <div className="App">
-      <header>
+      {/* <header>
         <h1>Capture Your report</h1>
-      </header>
+      </header> */}
       <div className="container">
       
         <div className="camrea-div">
@@ -125,9 +137,8 @@ function App() {
       </div>
     </div>
     <form>
-      <div id="img-container">
+      <div id="img-container" width='80%'>
       </div>
-       <button type='submit' id="button-submit">Save image</button> 
     </form>
       <div>
         <ImageShape/>
